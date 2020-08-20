@@ -1,0 +1,40 @@
+  /* .SearchInput{
+      background:red;
+  } */
+.swiper_list swiper{
+  width:750rpx;
+  height: 340rpx;
+}
+  .swiper_list image{
+width:100%;
+  }
+  /* 分类导航 */
+.cates_list{
+  display: flex;
+}
+.cates_list navigator{
+  padding:20rpx;  
+  flex:1;
+}  
+.cates_list navigator image{
+  width: 100%;   
+}    
+
+/* 楼层样式 */
+/* .floor_list .floor_content{
+  display:flex;
+} */
+.floor_list .floor_content navigator{
+  float:left;
+  width:33.3%; 
+}
+
+view:nth-of-type(4){
+  height: 33.33vw*386/232/2;
+}
+.floor_list .floor_content navigator image{
+  width: 100%;
+  height: 100%;
+}
+  
+         

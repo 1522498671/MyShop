@@ -1,0 +1,5 @@
+<!--components/SearchInput/SearchInput.wxml-->
+<view class="search_input">
+<input bindinput="handleSearchInput" ><text>搜索</text></input>
+</view>
+              

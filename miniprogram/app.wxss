@@ -1,0 +1,12 @@
+/**app.wxss**/
+  @import "./style/inconfont.wxss";
+  /*在微信小程序中不支持通配符'*' */
+  page,view,swiper,swiper-item,image,navigator{
+      margin:0px;
+      padding:0px;
+      box-sizing:border-box;
+  }
+  page{
+      --themeClolor:#eb4450;
+      font-size:32rpx;
+  }

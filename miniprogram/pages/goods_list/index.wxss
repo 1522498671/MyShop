@@ -1,0 +1,23 @@
+/* pages/goods_list/index.wxss */
+navigator{
+    display:flex;
+    padding-top: 60rpx;
+    border-bottom: 1px solid gray;
+}
+navigator .goods_pic{
+    flex:2;
+    justify-content: center;
+    align-items: center;
+}
+navigator .goods_text{
+    flex:3;
+    
+}
+navigator .goods_text .goods_price{
+    color:red;
+    padding-top:60rpx;
+}
+
+navigator .goods_pic image{
+    width: 100%;
+}   

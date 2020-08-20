@@ -1,0 +1,116 @@
+/* pages/goods_detail/index.wxss */
+page{
+  padding-bottom: 90rpx;
+}  
+
+
+.goods_pics swiper{
+  height: 70vw;
+  text-align:center;
+}
+.goods_pics swiper image{
+  width: 60%;
+}  
+.goods_detail .goods_price{
+  color:red;
+  font-size: 18px;
+  padding-left: 15rpx;
+}
+
+.goods_name_row{
+  display: flex;
+  padding: 15rpx 0;
+  border-top: 1px solid gray;
+  border-bottom:1px solid gray;
+}
+
+.goods_detail .goods_name{
+  flex:3;
+  padding-top: 10rpx;
+  padding-right: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+ 
+}
+.goods_name_row .goods_collect{
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-left: 3rpx solid gray;
+
+}
+
+
+.goods_detail .goods_descript{
+  color:red;
+  font-size:18px;
+  padding-top: 30rpx;
+  padding-left: 15rpx;
+}
+
+/* 底部工具栏样式 */
+.btm_tool{
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  display: flex;
+  height: 100rpx;
+  text-align:center;
+  background: white;
+  border-top: 1px solid gray;
+}
+.btm_tool .item{
+  padding-top: 15rpx;
+  flex:1;
+  justify-content: center;
+  align-items: center;
+}
+.btm_tool .kefu{
+  position: relative;
+}
+.btm_tool .kefu button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity:0;
+}
+
+.btm_tool .share{
+  position: relative;
+}
+.btm_tool .share button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity:0;
+}
+
+
+.btm_tool .addshop{
+  flex:2;
+  background:yellow;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.btm_tool .nowbuy{
+    display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34rpx;
+  font-weight: 600;
+  color:white;
+  flex:2;
+  background:red;
+}

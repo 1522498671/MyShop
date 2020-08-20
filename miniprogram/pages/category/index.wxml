@@ -1,0 +1,56 @@
+<!--pages/category/index.wxml-->
+<view class="category">
+    <!-- 搜索组件 -->
+    <SearchInput></SearchInput>  
+    <view class="cate_list">
+            <!--商品分类左侧菜单栏 -->
+            <view class="cate_left_list">
+                 <scroll-view scroll-y  >
+                <view
+                wx:for="{{categoryLeftList}}" 
+                wx:key="index" wx:for-index="index"
+                 wx:for-item="item"
+                 class="{{currentIndex===index?'active':''}}"
+                 bindtap="handleItemTap"  
+                 data-currentIndex="{{index}}"
+                 >              
+                 {{item}}</view>
+                 </scroll-view>
+            </view>
+                <!--商品分类左侧菜单栏 -->
+
+                <!--商品分类内容 -->
+            <view class="cate_right_content">
+                <!-- scroll-view必须设置高度，不然会出现滚动条问题 -->
+                <scroll-view scroll-y="true" scroll-top="{{scrollTop}}">
+                    <view 
+                    wx:for="{{categoryRightList}}" 
+                    wx:key="cat_id"
+                    wx:for-index="index1" 
+                    wx:for-item="item1">
+                    <!-- 右侧内容的标题 -->
+
+                    <view class="content_title">/{{item1.cat_name}}/</view>
+                    <!-- 右侧内容里的图片链接 -->
+                    <view class="content">
+                    <navigator 
+                    wx:for="{{item1.children}}"
+                    wx:key="cat_id"
+                    wx:for-index="index2" 
+                    wx:for-item="item2"
+                    url="/pages/goods_list/index?query={{item2.cat_name}}"
+                    >
+                    <view ><image mode="widthFix" src="{{item2.cat_icon}}"/></view>
+                    <!-- 商品名称 -->
+                    <view class="goods_title">{{item2.cat_name}}</view>
+                    </navigator>
+                    </view>
+                    </view>
+                </scroll-view>
+            </view>
+        
+       
+ 
+
+    </view>
+</view> 

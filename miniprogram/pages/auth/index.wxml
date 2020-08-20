@@ -1,0 +1,9 @@
+<!--pages/auth/index.wxml-->
+<button 
+class="user_login" 
+bindgetuserinfo="handleGetUserInfo"
+open-type="getUserInfo"
+>
+用户授权
+</button> 
+ 

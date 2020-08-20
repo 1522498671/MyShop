@@ -1,0 +1,16 @@
+/* components/tabs/tabs.wxss */
+.tabs_list{
+    display:flex;
+    height: 60rpx;
+}
+.tabs_list .tabs_item{
+    /* background:gray; */
+    flex:1;
+    /* justify-content: center;
+    align-items: center; */
+    text-align:center;
+}
+.active{
+    color:red;
+    border-bottom: 5rpx solid red;
+}

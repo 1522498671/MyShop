@@ -1,0 +1,10 @@
+/* pages/auth/index.wxss */
+.user_login{
+    margin:25rpx auto;
+    width: 60%;
+    border: 1px solid green;
+    font-size: 36rpx;
+    font-weight: 600;
+    color:green;
+    text-align: center;
+}

@@ -1,0 +1,13 @@
+.search_input{
+   background:#fa3f3f; 
+   height:90rpx;  
+   padding:10rpx; 
+}
+.search_input input{
+    height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: white;
+   border-radius: 10rpx;
+}

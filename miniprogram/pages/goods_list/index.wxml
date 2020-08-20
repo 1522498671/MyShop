@@ -1,0 +1,27 @@
+<!--pages/goods_list/index.wxml-->
+<!-- 商品列表页面 -->
+
+<SearchInput></SearchInput> 
+<!-- 绑定自义定触发事件  bind后面加triggerevent中的事件名称 -->
+<!-- 搜索框组件 -->
+<tabs tabs="{{tabs}}" bindTapItemChange="handleTapItemChange">
+<!-- 商品列表 -->
+<block wx:if="{{tabs[0].isActive}}">
+<!-- 商品 导航链接 -->
+<navigator 
+wx:for="{{goodsListLeft}}"  
+wx:key="goods_id"
+url="/pages/goods_detail/index?goods_id={{item.goods_id}}" 
+ >
+ <!-- 左侧图片 -->
+ <view class="goods_pic"> <image mode="widthFix" src="{{item.goods_big_logo?item.goods_big_logo:'http://image1.suning.cn/uimg/b2c/newcatentries/0000000000-000000000147767325_1_800x800.jpg'}}"/></view>
+ <!-- 右侧文字描述 -->
+ <view class="goods_text"> {{item.goods_name}}
+     <view class="goods_price"><text>￥</text>{{item.goods_price}}</view>
+ </view>
+ <!-- <image src="{{item.goods_small_logo}}"/> -->
+ </navigator>
+ </block>
+<block wx:elif="{{tabs[1].isActive}}">2</block>
+<block wx:elif="{{tabs[2].isActive}}">3</block>  
+</tabs>     

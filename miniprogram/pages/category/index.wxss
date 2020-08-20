@@ -1,0 +1,63 @@
+/* pages/category/index.wxss */
+/* 商品分类样式 */
+page{
+    height: 100%;
+}
+/*scroll-view必须设置高度 */
+scroll-view{
+    height: 100vh;
+}
+.cate_list{
+    display: flex;
+
+}
+/* 左侧菜单栏 */
+.cate_left_list{
+    flex:2;
+    /* background:red; */
+    justify-content: center;
+    align-items: centers;
+    text-align: center;
+    height: 100%;
+}  
+/* 左侧菜单栏导航 */
+.cate_left_list view{  
+padding-top: 15rpx;
+height: 80rpx;
+}
+/* 菜单栏选中样式 */
+.active{
+    color:red;
+    border-bottom: 5rpx solid red;
+}
+/* 右侧内容列表 */
+.cate_right_content{
+    flex:5;
+    /* background:blue; */
+
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* 内容标题 */
+.cate_right_content .content_title{
+    text-align: center;
+    padding-top:15rpx;
+}
+/* 内容导航链接 */
+.cate_right_content navigator{
+    /* display: flex; */
+    width: 33.33%;
+    padding:20rpx 20rpx 10rpx;
+    text-align: center;
+}
+/* .cate_right_content navigator :active{
+background:red;
+} */
+/* 内容中的图片 */
+.cate_right_content navigator image, .good_title{
+    width: 100%;
+}
+
+          

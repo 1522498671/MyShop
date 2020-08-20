@@ -1,0 +1,83 @@
+<!-- pages/goods_cart/index.wxml -->
+<view class="goods_cart">
+  <view class="goods_address">
+    <!-- 当收货地址不存在，则按钮显示 -->
+    <view wx:if="{{!address.userName}}">
+      <view class="address" bindtap="handleAddress">收货地址{{address.userNmae}}</view>
+    </view>
+    <!-- 当收货地址存在，显示地址 -->
+    <view wx:else class="user_info">
+      <view>
+        <text class="reservice">收件人:</text>
+        {{address.userName}}
+      </view>
+      <view>  
+        <text>收货地址：</text>
+        {{address.all}}
+        <!-- {{address.provinceName+address.countyName+address.detailInfo}} -->
+      </view>
+      <view class="user_phone">{{address.telNumber}}</view>
+    </view>
+  </view>
+  <view class="cart_text">购物车</view>
+  <!-- 购物车详情 -->
+  <block wx:if="{{cart.length!=0}}">
+  <view class="cart" wx:for="{{cart}}" wx:key="goods_id" wx:for-index="index1" wx:for-item="item1">
+    <view class="check_warp">
+      <checkbox-group data-goods_id="{{item1.goods_id}}" bindchange="handleItemChange">
+        <checkbox checked="{{item1.checked}}"></checkbox>
+      </checkbox-group>
+    </view>   
+    <!-- 商品图片 -->  
+    <navigator class="goods_pic_warp" url="/pages/goods_detail/index?goods_id={{item1.goods_id}}">
+      <image mode="widthFix" src="{{item1.goods_small_logo?item1.goods_small_logo:'http://image3.suning.cn/uimg/b2c/newcatentries/0070094221-000000000139638911_1_400x400.jpg'}}" />
+    </navigator>
+    <!-- 商品内容 -->
+    <view class="goods_info">
+      <view class="goods_name">×{{item1.goods_name}}</view>
+      <view class="goods_price_warp">
+        <view class="goods_price">￥{{item1.goods_price}}</view>
+        <view class="goods_num_tool">
+          <view class="jian" 
+          bindtap="hanleItemNumEdit" 
+          data-goods_id="{{item1.goods_id}}" 
+          data-operation="{{-1}}">-</view>  
+          <!-- 商品数量 -->
+          <view class="goods_num"><input bindinput="handleInput" bindblur="handleNumInput" data-num="{{item1.num}}" value="{{item1.num}}">{{item1.num}}</input></view>
+          <view class="jia"  
+          bindtap="hanleItemNumEdit" 
+          data-goods_id="{{item1.goods_id}}" 
+          data-operation="{{1}}">+</view>
+        </view>  
+      </view>  
+    </view>
+  </view>  
+  </block>
+  <block wx:else><view><image mode="widthFix" src="../../images/cart/empty_cart.gif"/><view style="text-align:center; font-size:40rpx;font-weight:600;">购物车没有商品了...</view></view></block>
+  <!-- 结算栏 -->
+  <view class="cart_bottom_tool">
+    <!-- 全选框 -->
+    <view class="check_warp">
+      <checkbox-group bindchange="handleItemAllChange">
+        <checkbox checked="{{checkedall}}">全选</checkbox>
+      </checkbox-group>
+    </view>
+    <!-- 结算内容 -->
+    <view class="settlement">
+      <view class="add_price">合计</view>
+      <view class="goods_all_price_warp">
+        <view class="goods_all_price">￥{{totalPrice}}</view>
+        <view>包含运费</view>
+      </view>
+      <!-- 结算按钮 -->
+      <view   
+      class="price_btn" 
+      bindtap="handlePriceBtn"
+      >
+        结算({{totalNum}})
+        <!-- 商品总数量 -->
+        <view class="num"></view>
+      </view>  
+    </view>
+  </view>
+</view>

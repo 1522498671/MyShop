@@ -1,0 +1,58 @@
+<!--pages/goods_pay/index.wxml-->
+<view class="goods_cart">
+  <view class="goods_address">
+
+    <!-- 显示地址 -->
+    <view  class="user_info">
+      <view>
+        <text class="reservice">收件人:</text>
+        {{address.userName}}
+      </view>
+      <view>  
+        <text>收货地址：</text>
+        {{address.all}}
+      </view>
+      <view class="user_phone">{{address.telNumber}}</view>
+    </view>
+  </view>
+  <view class="cart_text">购物车</view>
+  <!-- 购物车详情 -->
+  <view class="cart" wx:for="{{cart}}" wx:key="goods_id" wx:for-index="index1" wx:for-item="item1">
+    <!-- 商品图片 -->  
+    <navigator class="goods_pic_warp" url="/pages/goods_detail/index?goods_id={{item1.goods_id}}">
+      <image mode="widthFix" src="{{item1.goods_small_logo?item1.goods_small_logo:'http://image3.suning.cn/uimg/b2c/newcatentries/0070094221-000000000139638911_1_400x400.jpg'}}" />
+    </navigator>
+    <!-- 商品内容 -->
+    <view class="goods_info">
+      <view class="goods_name">{{item1.goods_name}}</view>
+      <view class="goods_price_warp">
+        <view class="goods_price">￥{{item1.goods_price}}</view>
+          <view class="goods_num">×{{item1.num}}</view>
+      </view>  
+    </view>
+  </view>  
+  <!-- 结算栏 --> 
+  <view class="cart_bottom_tool">
+    <!-- 结算内容 -->
+    <view class="cart_checkall_warp"></view>
+    <view class="settlement">
+      <view class="add_price">合计</view>
+      <view class="goods_all_price_warp">
+        <view class="goods_all_price">￥{{totalPrice}}</view>
+        <view>包含运费</view>
+      </view>
+      <!-- 支付按钮 -->
+      <view     
+      class="price_btn" 
+      > 
+      <button
+      bindtap="handlePayBtn"
+      >
+        支付({{totalNum}})
+        </button>
+        <!-- 商品总数量 -->
+        <view class="num"></view>
+      </view>  
+    </view>
+  </view>
+</view>

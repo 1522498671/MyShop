@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="shop_index">
+<SearchInput></SearchInput> 
+<!--轮播图开始-->
+<view class="swiper_list">
+    <swiper       
+    autoplay="{{autoplay}}"
+    indicator-dots="{{indicatorDots}}"
+    circular="{{circular}}">
+      <swiper-item  
+      wx:for="{{swiperList}}"  
+      wx:key="goods_id">
+          <navigator url="">
+              <image mode="widthFix" src="{{item.image_src}}"/>
+              </navigator>
+    </swiper-item>
+      </swiper>  
+</view>   
+<!--轮播图结束--> 
+</view>
+
+<!-- 分类导航开始 -->  
+<view class="cates_list">
+<navigator wx:for="{{catesList}}" wx:key="name"><image mode="widthFix" src="{{item.image_src}}"/></navigator>
+</view>    
+<!-- 分类导航结束-->
+
+<!-- 楼层数据展示-->  
+<view class="floor_list">
+  <view
+   wx:for="{{floorList}}"
+   wx:key="name"
+   wx:for-index="index1"
+   wx:for-item="item1"
+   >
+   <!-- 楼层标题 -->
+    <view class="floor_title"><image mode="widthFix" src="{{item1.floor_title.image_src}}"/></view>
+    <view class="floor_content">
+    <navigator
+    wx:for="{{item1.product_list}}"
+    wx:key="name"
+    wx:for-index="index2"
+    wx:for-item="item2">
+    <image mode="widthFix" src="{{item2.image_src}}"/>
+    </navigator>
+    </view>
+    </view>
+</view>
+  
