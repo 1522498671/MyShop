@@ -5,10 +5,11 @@
 <!-- 绑定自义定触发事件  bind后面加triggerevent中的事件名称 -->
 <!-- 搜索框组件 -->
 <tabs tabs="{{tabs}}" bindTapItemChange="handleTapItemChange">
-<!-- 商品列表 -->
+<!-- 商品列表 --> 
 <block wx:if="{{tabs[0].isActive}}">
 <!-- 商品 导航链接 -->
-<navigator 
+<navigator
+class="goods_nav" 
 wx:for="{{goodsListLeft}}"  
 wx:key="goods_id"
 url="/pages/goods_detail/index?goods_id={{item.goods_id}}" 

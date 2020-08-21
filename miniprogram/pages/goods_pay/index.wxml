@@ -25,12 +25,12 @@
     <!-- 商品内容 -->
     <view class="goods_info">
       <view class="goods_name">{{item1.goods_name}}</view>
-      <view class="goods_price_warp">
+      <view class="goods_price_warp">  
         <view class="goods_price">￥{{item1.goods_price}}</view>
           <view class="goods_num">×{{item1.num}}</view>
-      </view>  
-    </view>
-  </view>  
+      </view>   
+    </view>  
+  </view>    
   <!-- 结算栏 --> 
   <view class="cart_bottom_tool">
     <!-- 结算内容 -->
